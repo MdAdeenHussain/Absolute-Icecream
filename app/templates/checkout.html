@@ -1,0 +1,347 @@
+{% extends "base.html" %}
+
+{% block title %}
+Checkout — Absolute Icecream™
+{% endblock %}
+
+{% block content %}
+
+<main class="checkout-page">
+
+    <div class="container">
+
+        <div class="checkout-heading">
+
+            <span class="eyebrow">
+                CHECKOUT
+            </span>
+
+            <h1>
+                Make it
+                <em>absolute.</em>
+            </h1>
+
+        </div>
+
+
+        <form
+            id="checkout-form"
+            class="checkout-layout">
+
+            <section class="checkout-form">
+
+                <div class="checkout-section">
+
+                    <span class="eyebrow">
+                        01 / CONTACT
+                    </span>
+
+                    <h2>
+                        Who are we delivering to?
+                    </h2>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-field full">
+
+                            <label for="name">
+                                Full name
+                            </label>
+
+                            <input
+                                id="name"
+                                name="customer_name"
+                                value="{{ customer.full_name if customer else '' }}"
+                                required
+                                autocomplete="name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="email">
+                                Email
+                            </label>
+
+                            <input
+                                id="email"
+                                name="email"
+                                value="{{ customer.email if customer else '' }}"
+                                type="email"
+                                required
+                                autocomplete="email"
+                            >
+
+                        </div>    
+
+
+                        <div class="form-field">
+
+                            <label for="phone">
+                                Phone
+                            </label>
+
+                            <input
+                                id="phone"
+                                name="phone"
+                                value="{{ customer.phone if customer else '' }}"
+                                type="tel"
+                                required
+                                autocomplete="tel"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="checkout-section">
+
+                    <span class="eyebrow">
+                        02 / DELIVERY
+                    </span>
+
+                    <h2>
+                        Where should it go?
+                    </h2>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-field full">
+
+                            <label for="address_line_1">
+                                Address
+                            </label>
+
+                            <input
+                                id="address_line_1"
+                                name="address_line_1"
+                                required
+                                autocomplete="street-address"
+                            >
+
+                        </div>
+
+
+                        <div class="form-field full">
+
+                            <label for="address_line_2">
+                                Apartment, floor, landmark
+                            </label>
+
+                            <input
+                                id="address_line_2"
+                                name="address_line_2"
+                                autocomplete="address-line2"
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="city">
+                                City
+                            </label>
+
+                            <input
+                                id="city"
+                                name="city"
+                                required
+                                autocomplete="address-level2"
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="state">
+                                State
+                            </label>
+
+                            <input
+                                id="state"
+                                name="state"
+                                required
+                                autocomplete="address-level1"
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="postal_code">
+                                PIN code
+                            </label>
+
+                            <input
+                                id="postal_code"
+                                name="postal_code"
+                                required
+                                inputmode="numeric"
+                                autocomplete="postal-code"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="checkout-section">
+
+                    <span class="eyebrow">
+                        03 / PAYMENT
+                    </span>
+
+                    <h2>
+                        Payment
+                    </h2>
+
+                    <div class="payment-placeholder">
+
+                        <div class="payment-placeholder-icon">
+                            ₹
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Secure online payment
+                            </strong>
+
+                            <p>
+                                Your payment gateway will be
+                                connected here.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="checkout-error"
+                    class="checkout-error"
+                    role="alert">
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary checkout-submit"
+                    id="checkout-submit">
+
+                    Continue to payment
+
+                </button>
+
+            </section>
+
+
+            <aside class="checkout-summary">
+
+                <span class="eyebrow">
+                    YOUR ORDER
+                </span>
+
+                <div
+                    id="checkout-items"
+                    class="checkout-items">
+
+                    {% for item in cart.items %}
+
+                        <div class="checkout-item">
+
+                            <div>
+
+                                <strong>
+                                    {{ item.name }}
+                                </strong>
+
+                                <small>
+                                    {{ item.size }}
+                                    ×
+                                    {{ item.quantity }}
+                                </small>
+
+                            </div>
+
+                            <span>
+                                ₹{{ "%.0f"|format(
+                                    item.line_total
+                                ) }}
+                            </span>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong>
+                        ₹{{ "%.0f"|format(
+                            cart.subtotal
+                        ) }}
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Delivery
+                    </span>
+
+                    <span>
+                        Calculated
+                    </span>
+
+                </div>
+
+
+                <div class="summary-divider"></div>
+
+
+                <div class="summary-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong>
+                        ₹{{ "%.0f"|format(
+                            cart.subtotal
+                        ) }}
+                    </strong>
+
+                </div>
+
+            </aside>
+
+        </form>
+
+    </div>
+
+</main>
+
+{% endblock %}

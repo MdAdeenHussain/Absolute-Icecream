@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+
+{% block title %}
+My Account | Absolute Icecream™
+{% endblock %}
+
+{% block content %}
+
+<section class="account-page">
+
+    <div class="account-container">
+
+        <div class="account-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    MY ACCOUNT
+                </span>
+
+                <h1>
+                    Hello, {{ customer.first_name }}.
+                </h1>
+
+                <p>
+                    Manage your Absolute Icecream™ account.
+                </p>
+
+            </div>
+
+            <a
+                href="{{ url_for('auth.logout') }}"
+                class="account-link"
+            >
+                Sign out
+            </a>
+
+        </div>
+
+
+        <div class="account-grid">
+
+            <a
+                href="{{ url_for('account.orders') }}"
+                class="account-card"
+            >
+                <span>01</span>
+
+                <h2>
+                    Orders
+                </h2>
+
+                <p>
+                    View your order history and order details.
+                </p>
+            </a>
+
+
+            <a
+                href="{{ url_for('account.addresses') }}"
+                class="account-card"
+            >
+                <span>02</span>
+
+                <h2>
+                    Addresses
+                </h2>
+
+                <p>
+                    Manage your saved delivery addresses.
+                </p>
+            </a>
+
+
+            <a
+                href="{{ url_for('account.profile') }}"
+                class="account-card"
+            >
+                <span>03</span>
+
+                <h2>
+                    Profile
+                </h2>
+
+                <p>
+                    Update your personal information.
+                </p>
+            </a>
+
+
+            <a href="{{ url_for('shop.shop') }}" class="account-card">
+                <span>04</span>
+
+                <h2>
+                    Product Reports
+                </h2>
+
+                <p>
+                    Browse product-specific laboratory information.
+                </p>
+            </a>
+
+        </div>
+
+
+        <section class="account-orders">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        RECENT ACTIVITY
+                    </span>
+
+                    <h2>
+                        Recent orders
+                    </h2>
+
+                </div>
+
+                {% if orders %}
+
+                <a
+                    href="{{ url_for('account.orders') }}"
+                    class="account-link"
+                >
+                    View all
+                </a>
+
+                {% endif %}
+
+            </div>
+
+
+            {% if orders %}
+
+                <div class="orders-list">
+
+                    {% for order in orders %}
+
+                        <a
+                            href="{{ url_for(
+                                'account.order_detail',
+                                order_id=order.id
+                            ) }}"
+                            class="order-row"
+                        >
+
+                            <div>
+                                <strong>
+                                    {{ order.order_number }}
+                                </strong>
+
+                                <span>
+                                    {{ order.created_at.strftime(
+                                        "%d %b %Y"
+                                    ) }}
+                                </span>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    ₹{{ "%.2f"|format(order.total) }}
+                                </strong>
+
+                                <span>
+                                    {{ order.status|title }}
+                                </span>
+
+                            </div>
+
+                        </a>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+                <div class="empty-account-state">
+
+                    <h3>
+                        No orders yet.
+                    </h3>
+
+                    <p>
+                        Your future Absolute Icecream™ orders
+                        will appear here.
+                    </p>
+
+                    <a
+                        href="{{ url_for('shop.shop') }}"
+                        class="account-submit"
+                    >
+                        Shop Ice Cream
+                    </a>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+    </div>
+
+</section>
+
+{% endblock %}

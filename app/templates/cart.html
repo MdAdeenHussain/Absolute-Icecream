@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}
+Your Cart — Absolute Icecream™
+{% endblock %}
+
+{% block content %}
+
+<main class="cart-page">
+
+    <div class="container">
+
+        <div class="cart-page-heading">
+
+            <span class="eyebrow">
+                YOUR CART
+            </span>
+
+            <h1>
+                Almost
+                <em>absolute.</em>
+            </h1>
+
+        </div>
+
+
+        <div class="cart-page-layout">
+
+            <section>
+
+                <div
+                    id="cart-page-items"
+                    class="cart-page-items">
+                </div>
+
+            </section>
+
+
+            <aside class="cart-summary">
+
+                <span class="eyebrow">
+                    ORDER SUMMARY
+                </span>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <strong id="page-subtotal">
+                        ₹0
+                    </strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Delivery</span>
+                    <span id="page-delivery">
+                        Calculated at checkout
+                    </span>
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <div class="summary-total">
+                    <span>Total</span>
+                    <strong id="page-total">
+                        ₹0
+                    </strong>
+                </div>
+
+                <a
+                    href="{{ url_for(
+                        'checkout.checkout_page'
+                    ) }}"
+                    class="btn btn-primary"
+                    id="cart-page-checkout">
+
+                    Continue to checkout
+
+                </a>
+
+                <a
+                    href="{{ url_for('shop.shop') }}"
+                    class="continue-shopping">
+
+                    ← Continue shopping
+
+                </a>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock %}

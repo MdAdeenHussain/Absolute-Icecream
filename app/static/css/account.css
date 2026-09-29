@@ -1,0 +1,396 @@
+.account-auth {
+    min-height: 80vh;
+    padding: 100px 20px;
+    display: grid;
+    place-items: center;
+}
+
+.auth-card {
+    width: min(500px, 100%);
+    padding: 40px;
+    border-radius: 24px;
+    background: var(--surface, #fff);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+}
+
+.auth-card h1 {
+    margin: 10px 0;
+}
+
+.auth-intro {
+    line-height: 1.7;
+    opacity: 0.65;
+    margin-bottom: 30px;
+}
+
+.form-field {
+    margin-bottom: 20px;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-field input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    border-radius: 10px;
+    background: transparent;
+    font: inherit;
+}
+
+.form-field input:disabled {
+    opacity: 0.6;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.account-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 20px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--color-navy, #071426);
+    color: white;
+    text-decoration: none;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.auth-card .account-submit {
+    width: 100%;
+}
+
+.auth-switch {
+    margin: 25px 0 0;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.auth-switch a {
+    font-weight: 600;
+    color: inherit;
+}
+
+.account-page {
+    padding: 110px 20px 80px;
+}
+
+.account-container {
+    width: min(1050px, 100%);
+    margin: 0 auto;
+}
+
+.account-container.narrow {
+    width: min(650px, 100%);
+}
+
+.account-header,
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 45px;
+}
+
+.account-header h1,
+.section-heading h1 {
+    margin: 8px 0;
+}
+
+.account-header p,
+.section-heading p {
+    opacity: 0.65;
+}
+
+.account-link {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.account-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-bottom: 80px;
+}
+
+.account-card {
+    padding: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    border-radius: 18px;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.account-card:hover {
+    transform: translateY(-3px);
+}
+
+.account-card > span {
+    font-size: 12px;
+    opacity: 0.45;
+}
+
+.account-card h2 {
+    margin: 20px 0 10px;
+}
+
+.account-card p {
+    margin: 0;
+    opacity: 0.65;
+    line-height: 1.6;
+}
+
+.section-heading {
+    align-items: flex-end;
+}
+
+.account-orders {
+    margin-top: 20px;
+}
+
+.orders-list {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.order-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    color: inherit;
+    text-decoration: none;
+}
+
+.order-row > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.order-row > div:last-child {
+    text-align: right;
+}
+
+.order-row span {
+    font-size: 13px;
+    opacity: 0.55;
+}
+
+.empty-account-state {
+    padding: 45px 25px;
+    border: 1px dashed rgba(0, 0, 0, 0.16);
+    border-radius: 18px;
+    text-align: center;
+}
+
+.empty-account-state p {
+    opacity: 0.6;
+    margin-bottom: 25px;
+}
+
+.account-form {
+    padding: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    border-radius: 18px;
+}
+
+.checkbox-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0 25px;
+    font-size: 14px;
+}
+
+.checkbox-field input {
+    width: 17px;
+    height: 17px;
+}
+
+.address-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.address-card {
+    padding: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    border-radius: 18px;
+}
+
+.address-card-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.address-default {
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: rgba(28, 140, 92, 0.1);
+    color: #1c8c5c;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.address-card p {
+    line-height: 1.65;
+    opacity: 0.7;
+}
+
+.danger-link {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #a33;
+    cursor: pointer;
+    font: inherit;
+}
+
+.order-detail-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 25px;
+}
+
+.order-items,
+.order-summary {
+    padding: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    border-radius: 18px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.order-item:first-child {
+    padding-top: 0;
+}
+
+.order-item:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.order-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.order-item span {
+    font-size: 13px;
+    opacity: 0.55;
+}
+
+.order-summary h2 {
+    margin-top: 0;
+}
+
+.order-summary > div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.order-total {
+    margin-top: 15px;
+    padding-top: 18px !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+}
+
+.order-status {
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(7, 20, 38, 0.07);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+@media (max-width: 700px) {
+
+    .account-page {
+        padding-top: 80px;
+    }
+
+    .auth-card {
+        padding: 25px;
+    }
+
+    .account-header,
+    .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .account-grid,
+    .address-grid,
+    .order-detail-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .order-row {
+        align-items: flex-start;
+    }
+}
+
+/* Fixed dark application theme */
+[data-theme="dark"] .auth-card,
+[data-theme="dark"] .account-card,
+[data-theme="dark"] .account-form,
+[data-theme="dark"] .address-card,
+[data-theme="dark"] .order-items,
+[data-theme="dark"] .order-summary {
+    background: var(--surface-elevated);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-field input {
+    border-color: var(--border-color);
+    color: var(--text-primary);
+    background: var(--surface-secondary);
+}
+
+[data-theme="dark"] .orders-list,
+[data-theme="dark"] .order-row,
+[data-theme="dark"] .order-item,
+[data-theme="dark"] .order-total {
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .account-submit {
+    background: var(--color-orange);
+    color: var(--color-navy-950);
+}

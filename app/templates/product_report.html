@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Product information and laboratory report status for {{ product.name }} by Absolute Icecream.">
+    <title>{{ product.name }} — Product report | Absolute Icecream</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/product_report.css') }}">
+</head>
+<body>
+    <main class="report-shell">
+        <header class="report-header">
+            <a class="wordmark" href="{{ url_for('main.index') }}">Absolute Icecream</a>
+            <span class="report-label">PRODUCT REPORT</span>
+        </header>
+
+        <section class="product-intro" aria-labelledby="product-name">
+            {% if product.image %}
+                <img class="product-image" src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }} ice cream">
+            {% else %}
+                <div class="product-image product-image-placeholder" aria-hidden="true">{{ product.name }}</div>
+            {% endif %}
+            <div>
+                <p class="eyebrow">{{ product.flavour or 'Absolute Icecream' }}</p>
+                <h1 id="product-name">{{ product.name }}</h1>
+                <p class="product-description">{{ product.short_description or product.description or 'Product-specific information from Absolute Icecream.' }}</p>
+            </div>
+        </section>
+
+        <section class="report-status" aria-labelledby="lab-status-title">
+            <div class="status-heading">
+                <span class="status-icon" aria-hidden="true">!</span>
+                <div>
+                    <p class="eyebrow">LABORATORY TESTING</p>
+                    <h2 id="lab-status-title">Results not yet published</h2>
+                </div>
+            </div>
+            <p>We do not have verified laboratory results published for this product yet. No test values or laboratory details are being estimated or shown as fact.</p>
+        </section>
+
+        <section class="report-section">
+            <h2>Laboratory analysis</h2>
+            <p class="section-intro">Product-level test results will appear here when they have been verified and approved for publication.</p>
+            <dl class="report-facts">
+                <div><dt>Total sugars</dt><dd class="pending">Not published</dd></div>
+                <div><dt>Sugar profile</dt><dd class="pending">Not published</dd></div>
+                <div><dt>Sweeteners tested</dt><dd class="pending">Not published</dd></div>
+                <div><dt>Testing laboratory</dt><dd class="pending">Not published</dd></div>
+                <div><dt>Test method and date</dt><dd class="pending">Not published</dd></div>
+            </dl>
+        </section>
+
+        <section class="report-section">
+            <h2>Product information</h2>
+            <p class="section-intro">This information is shown separately from laboratory findings.</p>
+            <dl class="report-facts">
+                <div>
+                    <dt>Ingredients</dt>
+                    <dd>{{ product.ingredients_text or 'Not published' }}</dd>
+                </div>
+                <div>
+                    <dt>Allergen information</dt>
+                    <dd>{{ product.allergen_information or 'Not published' }}</dd>
+                </div>
+                <div>
+                    <dt>Nutrition information</dt>
+                    <dd>{{ product.nutrition_status|replace('_', ' ')|title if product.nutrition_status else 'Not published' }}</dd>
+                </div>
+                {% if product.storage_instructions %}
+                <div>
+                    <dt>Storage</dt>
+                    <dd>{{ product.storage_instructions }}</dd>
+                </div>
+                {% endif %}
+            </dl>
+        </section>
+
+        <section class="report-share" aria-labelledby="share-title">
+            <div>
+                <p class="eyebrow">PRODUCT QR</p>
+                <h2 id="share-title">This QR opens this report</h2>
+                <p>Scan to open this product's report page. Each flavour has its own product-specific QR link.</p>
+            </div>
+            <img src="{{ url_for('reports.product_report_qr', slug=product.slug) }}" alt="QR code linking to the {{ product.name }} product report">
+        </section>
+
+        <footer class="report-footer">
+            <a href="{{ url_for('shop.product_detail', slug=product.slug) }}">Back to {{ product.name }}</a>
+            <span>Absolute Icecream · Product transparency</span>
+        </footer>
+    </main>
+</body>
+</html>

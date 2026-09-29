@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}
+Admin Login | Absolute Icecream™
+{% endblock %}
+
+{% block content %}
+
+<section class="admin-auth">
+
+    <div class="admin-auth-card">
+
+        <span class="eyebrow">
+            ABSOLUTE ICECREAM™
+        </span>
+
+        <h1>
+            Admin
+        </h1>
+
+        <p>
+            Sign in to manage the Absolute Icecream™
+            store.
+        </p>
+
+        <form method="POST">
+
+            <div class="admin-field">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    autocomplete="username"
+                    required
+                >
+
+            </div>
+
+
+            <div class="admin-field">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    id="password"
+                    type="password"
+                    name="password"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="admin-button"
+            >
+                Sign In
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

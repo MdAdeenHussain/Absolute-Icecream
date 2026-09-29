@@ -1,0 +1,183 @@
+<header
+    class="site-header"
+    id="site-header"
+>
+
+    <nav
+        class="navbar container"
+        aria-label="Primary navigation"
+    >
+
+        <!-- Logo -->
+        <a
+            href="{{ url_for('main.index') }}"
+            class="brand-mark"
+            aria-label="Absolute Icecream home"
+        >
+
+            <span class="brand-mark__absolute">
+                ABSOLUTE
+            </span>
+
+            <span class="brand-mark__icecream">
+                ICECREAM
+            </span>
+
+            <sup>™</sup>
+
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="navbar__links">
+
+            <a
+                href="{{ url_for('shop.shop') }}"
+                class="nav-link"
+            >
+                Shop
+            </a>
+
+            <a
+                href="{{ url_for('main.information_page', page='why-absolute') }}"
+                class="nav-link"
+            >
+                Why Absolute
+            </a>
+
+            <a
+                href="{{ url_for('main.information_page', page='our-story') }}"
+                class="nav-link"
+            >
+                Our Story
+            </a>
+
+            <a href="{{ url_for('shop.shop') }}#product-reports" class="nav-link">
+                Product Reports
+            </a>
+
+            <a
+                href="{{ url_for('main.information_page', page='journal') }}"
+                class="nav-link"
+            >
+                Journal
+            </a>
+
+            {% if current_customer %}
+            <a href="{{ url_for('account.dashboard') }}">
+                Account
+            </a>
+            {% else %}
+            <a href="{{ url_for('auth.login') }}">
+                Sign In
+            </a>
+            {% endif %}
+
+        </div>
+
+        <!-- Actions -->
+        <div class="navbar__actions">
+
+            <button
+                type="button"
+                class="icon-button navbar__cart-button"
+                data-cart-open
+                aria-label="Open shopping cart"
+            >
+                <i data-lucide="shopping-bag"></i>
+
+                <span
+                    class="cart-count"
+                    data-cart-count
+                >
+                    0
+                </span>
+            </button>
+
+            <button
+                type="button"
+                class="mobile-menu-button icon-button"
+                data-mobile-menu-open
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+                <i data-lucide="menu"></i>
+            </button>
+
+        </div>
+
+    </nav>
+
+    <!-- Mobile navigation -->
+    <div
+        class="mobile-menu"
+        data-mobile-menu
+        aria-hidden="true"
+    >
+
+        <div class="mobile-menu__header">
+
+            <span class="brand-mark brand-mark--mobile">
+                ABSOLUTE ICECREAM<sup>™</sup>
+            </span>
+
+            <button
+                type="button"
+                class="icon-button"
+                data-mobile-menu-close
+                aria-label="Close menu"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+        </div>
+
+        <div class="mobile-menu__links">
+
+            <a href="{{ url_for('shop.shop') }}">
+                Shop
+            </a>
+
+            <a href="{{ url_for('main.information_page', page='why-absolute') }}">
+                Why Absolute
+            </a>
+
+            <a href="{{ url_for('main.information_page', page='our-story') }}">
+                Our Story
+            </a>
+
+            <a href="{{ url_for('shop.shop') }}#product-reports">
+                Product Reports
+            </a>
+
+            <a href="{{ url_for('main.information_page', page='journal') }}">
+                Journal
+            </a>
+
+            {% if current_customer %}
+            <a href="{{ url_for('account.dashboard') }}">
+                Account
+            </a>
+            {% else %}
+            <a href="{{ url_for('auth.login') }}">
+                Sign In
+            </a>
+            {% endif %}
+
+        </div>
+
+        <div class="mobile-menu__footer">
+
+            <span>
+                {{ brand_tagline }}
+            </span>
+
+        </div>
+
+    </div>
+
+    <div
+        class="mobile-menu-backdrop"
+        data-mobile-menu-backdrop
+    ></div>
+
+</header>

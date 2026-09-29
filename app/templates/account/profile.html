@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}
+Profile | Absolute Icecream™
+{% endblock %}
+
+{% block content %}
+
+<section class="account-page">
+
+    <div class="account-container narrow">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="eyebrow">
+                    MY ACCOUNT
+                </span>
+
+                <h1>
+                    Profile
+                </h1>
+
+            </div>
+
+        </div>
+
+
+        <form
+            method="POST"
+            class="account-form"
+        >
+
+            <div class="form-grid">
+
+                <div class="form-field">
+
+                    <label>
+                        First name
+                    </label>
+
+                    <input
+                        name="first_name"
+                        value="{{ customer.first_name }}"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label>
+                        Last name
+                    </label>
+
+                    <input
+                        name="last_name"
+                        value="{{ customer.last_name or '' }}"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-field">
+
+                <label>
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    value="{{ customer.email }}"
+                    disabled
+                >
+
+            </div>
+
+
+            <div class="form-field">
+
+                <label>
+                    Phone
+                </label>
+
+                <input
+                    name="phone"
+                    type="tel"
+                    value="{{ customer.phone or '' }}"
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="account-submit"
+            >
+                Save Changes
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

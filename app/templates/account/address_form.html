@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+
+{% block title %}
+Add Address | Absolute Icecream™
+{% endblock %}
+
+{% block content %}
+
+<section class="account-page">
+
+    <div class="account-container narrow">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="eyebrow">
+                    DELIVERY
+                </span>
+
+                <h1>
+                    Add Address
+                </h1>
+
+            </div>
+
+        </div>
+
+
+        <form
+            method="POST"
+            class="account-form"
+        >
+
+            <div class="form-field">
+
+                <label>
+                    Label
+                </label>
+
+                <input
+                    name="label"
+                    placeholder="Home"
+                >
+
+            </div>
+
+
+            <div class="form-field">
+
+                <label>
+                    Recipient name
+                </label>
+
+                <input
+                    name="recipient_name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-field">
+
+                <label>
+                    Phone
+                </label>
+
+                <input
+                    name="phone"
+                    type="tel"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-field">
+
+                <label>
+                    Address line 1
+                </label>
+
+                <input
+                    name="address_line_1"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-field">
+
+                <label>
+                    Address line 2
+                </label>
+
+                <input
+                    name="address_line_2"
+                >
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-field">
+
+                    <label>
+                        City
+                    </label>
+
+                    <input
+                        name="city"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label>
+                        State
+                    </label>
+
+                    <input
+                        name="state"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-field">
+
+                    <label>
+                        Postal code
+                    </label>
+
+                    <input
+                        name="postal_code"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label>
+                        Country
+                    </label>
+
+                    <input
+                        name="country"
+                        value="India"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <label class="checkbox-field">
+
+                <input
+                    type="checkbox"
+                    name="is_default"
+                >
+
+                <span>
+                    Make this my default address
+                </span>
+
+            </label>
+
+
+            <button
+                type="submit"
+                class="account-submit"
+            >
+                Save Address
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

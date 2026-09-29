@@ -1,0 +1,88 @@
+<div
+    class="modal"
+    data-quick-view-modal
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="quick-view-title"
+>
+
+    <div
+        class="modal__backdrop"
+        data-modal-close
+    ></div>
+
+    <div class="modal__panel">
+
+        <button
+            type="button"
+            class="modal__close icon-button"
+            data-modal-close
+            aria-label="Close"
+        >
+            <i data-lucide="x"></i>
+        </button>
+
+        <div class="quick-view">
+
+            <div class="quick-view__image">
+
+                <img
+                    src=""
+                    alt=""
+                    data-quick-view-image
+                >
+
+            </div>
+
+            <div class="quick-view__content">
+
+                <span
+                    class="eyebrow"
+                    data-quick-view-flavor
+                ></span>
+
+                <h2
+                    id="quick-view-title"
+                    class="display-small"
+                    data-quick-view-title
+                ></h2>
+
+                <p
+                    class="quick-view__description"
+                    data-quick-view-description
+                ></p>
+
+                <div
+                    class="quick-view__price"
+                    data-quick-view-price
+                ></div>
+
+                <div class="quick-view__note">
+
+                    <i data-lucide="shield-check"></i>
+
+                    <span>
+                        Product claims and nutrition information
+                        are displayed according to what has
+                        currently been published.
+                    </span>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="button button--primary button--large"
+                    data-quick-view-add
+                >
+                    Add to Cart
+                    <i data-lucide="arrow-up-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+
+{% block title %}
+Create Account | Absolute Icecream™
+{% endblock %}
+
+{% block content %}
+
+<section class="account-auth">
+
+    <div class="auth-card">
+
+        <span class="eyebrow">
+            ABSOLUTE ICECREAM™
+        </span>
+
+        <h1>
+            Create your account
+        </h1>
+
+        <p class="auth-intro">
+            Save your details, manage orders and make
+            your next purchase easier.
+        </p>
+
+        <form method="POST">
+
+            <div class="form-grid">
+
+                <div class="form-field">
+
+                    <label for="first_name">
+                        First name
+                    </label>
+
+                    <input
+                        id="first_name"
+                        name="first_name"
+                        type="text"
+                        autocomplete="given-name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label for="last_name">
+                        Last name
+                    </label>
+
+                    <input
+                        id="last_name"
+                        name="last_name"
+                        type="text"
+                        autocomplete="family-name"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-field">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-field">
+
+                <label for="phone">
+                    Phone
+                </label>
+
+                <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    autocomplete="tel"
+                >
+
+            </div>
+
+
+            <div class="form-field">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    minlength="8"
+                    autocomplete="new-password"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-field">
+
+                <label for="confirm_password">
+                    Confirm password
+                </label>
+
+                <input
+                    id="confirm_password"
+                    name="confirm_password"
+                    type="password"
+                    minlength="8"
+                    autocomplete="new-password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="account-submit"
+            >
+                Create Account
+            </button>
+
+        </form>
+
+
+        <p class="auth-switch">
+
+            Already have an account?
+
+            <a href="{{ url_for('auth.login') }}">
+                Sign in
+            </a>
+
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,230 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ product.name }} — Absolute Icecream™
+{% endblock %}
+
+{% block content %}
+
+<main class="product-page">
+
+    <div class="container">
+
+        <div class="product-breadcrumb">
+
+            <a href="{{ url_for('shop.shop') }}">
+                Shop
+            </a>
+
+            <span>/</span>
+
+            <span>
+                {{ product.name }}
+            </span>
+
+        </div>
+
+
+        <section class="product-detail">
+
+            <!-- Gallery -->
+
+            <div class="product-detail-gallery">
+
+                <div class="product-main-image">
+
+                    {% if product.image %}
+
+                        <img
+                            src="{{ url_for(
+                                'static',
+                                filename=product.image
+                            ) }}"
+                            alt="{{ product.name }}"
+                        >
+
+                    {% else %}
+
+                        <div class="product-image-placeholder">
+                            {{ product.name }}
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+
+            <!-- Product information -->
+
+            <div class="product-detail-info">
+
+                <span class="eyebrow">
+                    {{ product.flavour }}
+                </span>
+
+                <h1>
+                    {{ product.name }}
+                </h1>
+
+                <p class="product-description">
+                    {{ product.description }}
+                </p>
+
+
+                <div class="product-proof-mini">
+
+                    <span aria-hidden="true">LAB</span>
+
+                    <div>
+                        <strong>Product lab report</strong>
+                        <small>View testing and product information for this flavour.</small>
+                    </div>
+
+                    <a href="{{ url_for('reports.product_report', slug=product.slug) }}"
+                       class="button button-secondary">
+                        View report
+                    </a>
+
+                    <a href="{{ url_for('reports.product_report', slug=product.slug) }}"
+                       aria-label="Open the {{ product.name }} product report">
+                        <img class="product-report-qr"
+                             src="{{ url_for('reports.product_report_qr', slug=product.slug) }}"
+                             alt="QR code linking to the {{ product.name }} product report">
+                    </a>
+
+                </div>
+
+
+                <!-- Size -->
+
+                <div class="variant-section">
+
+                    <div class="variant-heading">
+
+                        <span>
+                            FORMAT
+                        </span>
+
+                        <span id="selected-size">
+                            Select a size
+                        </span>
+
+                    </div>
+
+
+                    <div class="variant-grid">
+
+                        {% for variant in variants %}
+
+                            <button
+                                type="button"
+                                class="variant-option"
+                                data-variant-id="{{ variant.id }}"
+                                data-price="{{ variant.price }}"
+                                data-size="{{ variant.size }}"
+                                data-stock="{{ variant.stock_quantity }}">
+
+                                <strong>
+                                    {{ variant.size }}
+                                </strong>
+
+                                <span>
+                                    ₹{{ "%.0f"|format(
+                                        variant.price
+                                    ) }}
+                                </span>
+
+                            </button>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+
+                <!-- Add to cart -->
+
+                <div class="purchase-box">
+
+                    <div class="selected-price">
+
+                        <span>
+                            Price
+                        </span>
+
+                        <strong id="product-price">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="add-product-to-cart"
+                        class="btn btn-primary"
+                        disabled>
+
+                        Select a format
+
+                    </button>
+
+                </div>
+
+
+                <!-- Information tabs -->
+
+                <div class="product-information">
+
+                    <details open>
+
+                        <summary>
+                            Ingredients
+                        </summary>
+
+                        <div class="details-content">
+
+                            <p>
+                                Final ingredient information will
+                                be published with the corresponding
+                                product formulation and label.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+
+                    <details>
+
+                        <summary>
+                            Nutrition
+                        </summary>
+
+                        <div class="details-content">
+
+                            <p>
+                                Nutrition information will be shown
+                                from the finalized product label
+                                and applicable laboratory data.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,133 @@
+:root {
+    --color-navy-950: #040c13;
+    --color-navy-900: #071522;
+    --color-navy-800: #0c2030;
+    --color-navy-700: #123044;
+
+    --color-cream-50: #fffdf8;
+    --color-cream-100: #f8f3ea;
+    --color-cream-200: #eee7da;
+
+    --color-orange: #f46b45;
+    --color-orange-dark: #d95432;
+
+    --color-vanilla: #e8d5a8;
+    --color-strawberry: #e96a7a;
+    --color-mango: #f5a623;
+    --color-cocoa: #315e68;
+    --color-espresso: #4a3027;
+
+    --color-success: #397a5c;
+    --color-warning: #b7791f;
+    --color-danger: #b94a48;
+
+    --color-white: #ffffff;
+    --color-black: #000000;
+
+    --font-display:
+        "DM Serif Display",
+        Georgia,
+        serif;
+
+    --font-body:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    --text-primary: #071522;
+    --text-secondary: #52606d;
+    --text-muted: #7d8993;
+
+    --surface-primary: #f8f3ea;
+    --surface-secondary: #ffffff;
+    --surface-elevated: #ffffff;
+
+    --border-color: rgba(7, 21, 34, 0.12);
+
+    --shadow-sm:
+        0 4px 16px rgba(7, 21, 34, 0.06);
+
+    --shadow-md:
+        0 16px 40px rgba(7, 21, 34, 0.10);
+
+    --shadow-lg:
+        0 30px 80px rgba(7, 21, 34, 0.16);
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 24px;
+    --radius-xl: 36px;
+
+    --container-width: 1320px;
+
+    --header-height: 82px;
+
+    --transition-fast:
+        160ms cubic-bezier(0.2, 0.7, 0.2, 1);
+
+    --transition-base:
+        280ms cubic-bezier(0.2, 0.7, 0.2, 1);
+
+    --transition-slow:
+        600ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+
+[data-theme="dark"] {
+
+    --text-primary: #f8f3ea;
+    --text-secondary: #b9c4cb;
+    --text-muted: #84929d;
+
+    --surface-primary: #071522;
+    --surface-secondary: #0c2030;
+    --surface-elevated: #102b3e;
+
+    --border-color: rgba(248, 243, 234, 0.13);
+
+    --shadow-sm:
+        0 4px 20px rgba(0, 0, 0, 0.16);
+
+    --shadow-md:
+        0 20px 50px rgba(0, 0, 0, 0.24);
+
+    --shadow-lg:
+        0 40px 100px rgba(0, 0, 0, 0.35);
+
+    /* Aliases used by the page-level styles. */
+    --surface: var(--surface-primary);
+    --surface-soft: var(--surface-secondary);
+    --text: var(--text-primary);
+    --border: var(--border-color);
+    --navy: var(--color-navy-950);
+    --cream: var(--color-cream-100);
+    --color-navy: var(--color-navy-900);
+    --color-cream: var(--color-cream-100);
+    --accent: var(--color-orange);
+    --ease: var(--transition-base);
+}
+
+
+/* Flavor themes */
+
+.flavor--vanilla {
+    --flavor-accent: var(--color-vanilla);
+}
+
+.flavor--strawberry {
+    --flavor-accent: var(--color-strawberry);
+}
+
+.flavor--mango {
+    --flavor-accent: var(--color-mango);
+}
+
+.flavor--chocolate {
+    --flavor-accent: var(--color-cocoa);
+}
+
+.flavor--coffee {
+    --flavor-accent: var(--color-espresso);
+}

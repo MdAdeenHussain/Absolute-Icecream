@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}
+My Orders | Absolute Icecream™
+{% endblock %}
+
+{% block content %}
+
+<section class="account-page">
+
+    <div class="account-container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="eyebrow">
+                    MY ACCOUNT
+                </span>
+
+                <h1>
+                    Orders
+                </h1>
+
+            </div>
+
+            <a
+                href="{{ url_for('account.dashboard') }}"
+                class="account-link"
+            >
+                Account
+            </a>
+
+        </div>
+
+
+        {% if orders %}
+
+        <div class="orders-list">
+
+            {% for order in orders %}
+
+            <a
+                href="{{ url_for(
+                    'account.order_detail',
+                    order_id=order.id
+                ) }}"
+                class="order-row"
+            >
+
+                <div>
+
+                    <strong>
+                        {{ order.order_number }}
+                    </strong>
+
+                    <span>
+                        {{ order.created_at.strftime(
+                            "%d %b %Y"
+                        ) }}
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        ₹{{ "%.2f"|format(order.total) }}
+                    </strong>
+
+                    <span>
+                        {{ order.status|title }}
+                    </span>
+
+                </div>
+
+            </a>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="empty-account-state">
+
+            <h2>
+                No orders yet.
+            </h2>
+
+            <a
+                href="{{ url_for('shop.shop') }}"
+                class="account-submit"
+            >
+                Shop Ice Cream
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}

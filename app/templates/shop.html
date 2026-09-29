@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+
+{% block title %}
+Shop — Absolute Icecream™
+{% endblock %}
+
+{% block content %}
+
+<main class="shop-page">
+
+    <section class="shop-hero">
+
+        <div class="container">
+
+            <span class="eyebrow">
+                THE COLLECTION
+            </span>
+
+            <h1>
+                Find your
+                <em>absolute.</em>
+            </h1>
+
+            <p>
+                Three flavours. Two formats.
+                One uncompromising approach.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="shop-toolbar">
+
+        <div class="container shop-toolbar-inner">
+
+            <span>
+                {{ products|length }} flavours
+            </span>
+
+            <div class="shop-filters">
+
+                <button
+                    type="button"
+                    class="filter-button active"
+                    data-filter="all">
+                    All
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-button"
+                    data-filter="dark-chocolate">
+                    Chocolate
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-button"
+                    data-filter="coffee">
+                    Coffee
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-button"
+                    data-filter="vanilla">
+                    Vanilla
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="shop-products section" id="product-reports">
+
+        <div class="container">
+
+            {% if products %}
+
+                <div class="shop-grid">
+
+                    {% for product in products %}
+
+                        <article
+                            class="shop-product"
+                            data-product-name="{{ product.name|lower }}">
+
+                            {% include
+                                "components/product_card.html"
+                                with context
+                            %}
+
+                        </article>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+                <div class="empty-shop">
+
+                    <span class="eyebrow">
+                        COMING SOON
+                    </span>
+
+                    <h2>
+                        The freezer is getting ready.
+                    </h2>
+
+                    <p>
+                        Products will appear here when the
+                        launch inventory is available.
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+    </section>
+
+
+    <section class="shop-proof">
+
+        <div class="container shop-proof-inner">
+
+            <div>
+                <span class="eyebrow">
+                    BEFORE YOU BUY
+                </span>
+
+                <h2>
+                    Know what you're buying.
+                </h2>
+            </div>
+
+            <p>
+                Product details and product-specific reports are designed to live alongside
+                the product — not behind it.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+{% endblock %}

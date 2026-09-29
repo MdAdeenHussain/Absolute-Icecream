@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}
+Payment — Absolute Icecream™
+{% endblock %}
+
+{% block content %}
+
+<main class="checkout-page">
+
+    <div class="container">
+
+        <div class="payment-page">
+
+            <span class="eyebrow">
+                ORDER {{ order.order_number }}
+            </span>
+
+            <h1>
+                Ready for
+                <em>payment.</em>
+            </h1>
+
+            <div class="payment-order-card">
+
+                <div>
+
+                    <span>
+                        TOTAL
+                    </span>
+
+                    <strong>
+                        ₹{{ "%.0f"|format(order.total) }}
+                    </strong>
+
+                </div>
+
+                <p>
+                    The production payment gateway will be
+                    initialized here.
+                </p>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    disabled>
+
+                    Payment gateway pending
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock %}

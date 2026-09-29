@@ -1,0 +1,85 @@
+{% extends "admin/layout.html" %}
+
+{% block title %}
+Customers | Admin
+{% endblock %}
+
+{% block admin_content %}
+
+<div class="admin-page-header">
+
+    <div>
+
+        <span class="eyebrow">
+            CUSTOMERS
+        </span>
+
+        <h1>
+            Customers
+        </h1>
+
+    </div>
+
+</div>
+
+
+<div class="admin-panel">
+
+    <div class="admin-table-wrap">
+
+        <table class="admin-table">
+
+            <thead>
+
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Orders</th>
+                    <th>Joined</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                {% for customer in customers %}
+
+                <tr>
+
+                    <td>
+                        {{ customer.full_name }}
+                    </td>
+
+                    <td>
+                        {{ customer.email }}
+                    </td>
+
+                    <td>
+                        {{ customer.phone or "—" }}
+                    </td>
+
+                    <td>
+                        {{ customer.orders|length }}
+                    </td>
+
+                    <td>
+                        {{ customer.created_at.strftime(
+                            "%d %b %Y"
+                        ) }}
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+<div
+    class="cart-drawer"
+    id="cart-drawer"
+    aria-hidden="true">
+
+    <div
+        class="cart-overlay"
+        data-cart-close>
+    </div>
+
+
+    <aside class="cart-panel">
+
+        <header class="cart-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    YOUR CART
+                </span>
+
+                <h2>
+                    Absolute
+                </h2>
+
+            </div>
+
+            <button
+                type="button"
+                class="cart-close"
+                data-cart-close
+                aria-label="Close cart">
+
+                ×
+
+            </button>
+
+        </header>
+
+
+        <div
+            class="cart-items"
+            id="cart-items">
+
+            <div class="cart-loading">
+                Loading…
+            </div>
+
+        </div>
+
+
+        <footer class="cart-footer">
+
+            <div class="cart-summary-row">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong id="cart-subtotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+            <p class="cart-note">
+                Shipping and applicable charges are calculated
+                during checkout.
+            </p>
+
+            <a
+                href="{{ url_for('cart.cart_page') }}"
+                class="btn btn-outline cart-view-button">
+
+                View cart
+
+            </a>
+
+            <a
+                href="{{ url_for('checkout.checkout_page') }}"
+                class="btn btn-primary cart-checkout-button">
+
+                Checkout
+
+            </a>
+
+        </footer>
+
+    </aside>
+
+</div>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html
+    lang="en"
+    data-theme="dark"
+>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Absolute Icecream™ — Real taste. No compromises."
+    >
+
+    <meta
+        name="theme-color"
+        content="#071522"
+    >
+
+    <title>
+        {% block title %}
+            {{ brand_name }} — {{ brand_tagline }}
+        {% endblock %}
+    </title>
+
+    <!-- Fonts -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Lucide -->
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+    <!-- Application CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/theme.css') }}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/main.css') }}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/animations.css') }}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static',filename='css/shop.css') }}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static',filename='css/checkout.css') }}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static',filename='css/account.css') }}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static',filename='css/admin.css') }}"
+    >
+
+    {% block head %}{% endblock %}
+
+</head>
+
+<body>
+
+    <!-- Skip navigation -->
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+        Skip to content
+    </a>
+
+    <div id="scroll-progress"></div>
+
+    {% include "components/navbar.html" %}
+
+    <main id="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include "components/footer.html" %}
+
+    {% include "components/cart_drawer.html" %}
+
+    {% include "components/cookie_banner.html" %}
+
+    <!-- Global scripts -->
+    <script
+        src="{{ url_for('static', filename='js/main.js') }}"
+    ></script>
+
+    <script
+        src="{{ url_for('static',filename='js/shop.js') }}"
+    ></script>
+
+    <script
+        src="{{ url_for('static',filename='js/cart.js') }}"
+    ></script>
+
+    <script
+        src="{{ url_for('static',filename='js/checkout.js') }}"
+    ></script>
+
+    {% block scripts %}{% endblock %}
+
+    <script>
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+                if (
+                    typeof lucide !== "undefined"
+                ) {
+                    lucide.createIcons();
+                }
+            }
+        );
+    </script>
+
+</body>
+</html>

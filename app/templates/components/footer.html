@@ -1,0 +1,140 @@
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <a
+                    href="{{ url_for('main.index') }}"
+                    class="brand-mark brand-mark--footer"
+                >
+                    ABSOLUTE ICECREAM<sup>™</sup>
+                </a>
+
+                <p class="footer-tagline">
+                    {{ brand_tagline }}
+                </p>
+
+                <p class="footer-note">
+                    A premium ice cream concept built around
+                    taste, transparency and product-level information.
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>
+                    Explore
+                </h3>
+
+                <a href="{{ url_for('shop.shop') }}">
+                    Shop
+                </a>
+
+                <a href="{{ url_for('main.information_page', page='why-absolute') }}">
+                    Why Absolute
+                </a>
+
+                <a href="{{ url_for('main.information_page', page='our-story') }}">
+                    Our Story
+                </a>
+
+                <a href="{{ url_for('main.information_page', page='ingredients') }}">
+                    Ingredients
+                </a>
+
+                <a href="{{ url_for('main.information_page', page='journal') }}">
+                    Journal
+                </a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>
+                    Proof
+                </h3>
+
+                <a href="{{ url_for('shop.shop') }}#product-reports">Product Reports</a>
+
+                <a href="{{ url_for('main.information_page', page='ingredients') }}">Ingredients</a>
+
+                <a href="{{ url_for('shop.shop') }}">Product Information</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>
+                    Help
+                </h3>
+
+                <a href="{{ url_for('main.information_page', page='contact') }}">
+                    Contact
+                </a>
+
+                <a href="{{ url_for('main.information_page', page='shipping') }}">
+                    Shipping
+                </a>
+
+                <a href="{{ url_for('main.information_page', page='refunds') }}">
+                    Refunds
+                </a>
+
+                <a href="{{ url_for('auth.login') }}">
+                    My Account
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+                © {{ current_year if current_year else "2026" }}
+                Absolute Icecream™
+            </span>
+
+            <div class="footer-legal">
+
+                <a href="{{ url_for('main.information_page', page='privacy') }}">
+                    Privacy
+                </a>
+
+                <a href="{{ url_for('main.information_page', page='terms') }}">
+                    Terms
+                </a>
+
+                <a href="{{ url_for('main.information_page', page='cookies') }}">
+                    Cookies
+                </a>
+
+            </div>
+
+            <div class="footer-social">
+
+                <a
+                    href="#"
+                    aria-label="Instagram"
+                >
+                    <i data-lucide="instagram"></i>
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="YouTube"
+                >
+                    <i data-lucide="youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>

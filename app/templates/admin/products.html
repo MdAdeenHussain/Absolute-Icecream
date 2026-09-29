@@ -1,0 +1,90 @@
+{% extends "admin/layout.html" %}
+
+{% block title %}
+Products | Admin
+{% endblock %}
+
+{% block admin_content %}
+
+<div class="admin-page-header">
+
+    <div>
+
+        <span class="eyebrow">
+            CATALOG
+        </span>
+
+        <h1>
+            Products
+        </h1>
+
+    </div>
+
+</div>
+
+
+<div class="admin-panel">
+
+    <div class="admin-table-wrap">
+
+        <table class="admin-table">
+
+            <thead>
+
+                <tr>
+                    <th>Product</th>
+                    <th>Flavour</th>
+                    <th>Variants</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                {% for product in products %}
+
+                <tr>
+
+                    <td>
+                        <strong>
+                            {{ product.name }}
+                        </strong>
+
+                        <small>
+                            {{ product.slug }}
+                        </small>
+                    </td>
+
+                    <td>
+                        {{ product.flavour }}
+                    </td>
+
+                    <td>
+                        {{ product.variants|length }}
+                    </td>
+
+                    <td>
+
+                        {% if product.is_active %}
+                            Active
+                        {% else %}
+                            Draft
+                        {% endif %}
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,123 @@
+<article class="product-card">
+
+    <a
+        href="{{ url_for(
+            'shop.product_detail',
+            slug=product.slug
+        ) }}"
+        class="product-image-link">
+
+        <div class="product-image">
+
+            {% if product.image %}
+
+                <img
+                    src="{{ url_for(
+                        'static',
+                        filename=product.image
+                    ) }}"
+                    alt="{{ product.name }}"
+                    loading="lazy"
+                >
+
+            {% else %}
+
+                <div class="product-image-placeholder">
+                    {{ product.name }}
+                </div>
+
+            {% endif %}
+
+
+            {% if product.is_featured %}
+
+                <span class="product-badge">
+                    FEATURED
+                </span>
+
+            {% endif %}
+
+        </div>
+
+    </a>
+
+
+    <div class="product-card-content">
+
+        <div class="product-card-top">
+
+            <span class="product-flavour">
+                {{ product.flavour }}
+            </span>
+
+            <span class="product-status">
+
+                {% if product.variants
+                      and product.variants[0].stock_quantity > 0 %}
+
+                    AVAILABLE
+
+                {% else %}
+
+                    COMING SOON
+
+                {% endif %}
+
+            </span>
+
+        </div>
+
+
+        <h3>
+
+            <a
+                href="{{ url_for(
+                    'shop.product_detail',
+                    slug=product.slug
+                ) }}">
+
+                {{ product.name }}
+
+            </a>
+
+        </h3>
+
+
+        <p>
+            {{ product.short_description }}
+        </p>
+
+
+        <div class="product-card-bottom">
+
+            {% if product.variants %}
+
+                <span class="product-price">
+
+                    From ₹{{ "%.0f"|format(
+                        product.variants[0].price
+                    )
+                    }}
+
+                </span>
+
+            {% endif %}
+
+
+            <a
+                href="{{ url_for(
+                    'shop.product_detail',
+                    slug=product.slug
+                ) }}"
+                class="product-arrow"
+                aria-label="View {{ product.name }}">
+
+                →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</article>

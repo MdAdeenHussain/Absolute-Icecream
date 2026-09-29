@@ -1,0 +1,1051 @@
+{% extends "base.html" %}
+
+{% block title %}
+Absolute Icecream™ — Real taste. No compromises.
+{% endblock %}
+
+{% block content %}
+
+<main class="homepage">
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero" id="hero">
+
+        <div class="hero-particles" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="hero-content container">
+
+            <div class="hero-copy reveal">
+
+                <span class="eyebrow">
+                    ABSOLUTE ICECREAM™
+                </span>
+
+                <h1>
+                    Real taste.
+                    <span>No compromises.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Ice cream engineered around flavour, transparency
+                    and proof — not vague promises.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="#flavours"
+                       class="btn btn-primary">
+                        Explore flavours
+                    </a>
+
+                    <a href="{{ url_for('shop.shop') }}#product-reports"
+                       class="btn btn-ghost">
+                        View product reports
+                    </a>
+
+                </div>
+
+                <div class="hero-proof">
+
+                    <div>
+                        <strong>QR</strong>
+                        <span>Every tub</span>
+                    </div>
+
+                    <div>
+                        <strong>LAB</strong>
+                        <span>Product report</span>
+                    </div>
+
+                    <div>
+                        <strong>REAL</strong>
+                        <span>Total sugar</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-product reveal reveal-delay-2">
+                <img src="{{ url_for('static', filename='images/products/hero-image-main.JPG') }}"
+                     alt="Absolute Icecream product collection"
+                     class="hero-image-main">
+
+                <div class="hero-badge">
+                    <span>SCAN</span>
+                    <strong>QR</strong>
+                    <small>VERIFY</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-scroll">
+
+            <span>SCROLL TO DISCOVER</span>
+
+            <div class="scroll-line"></div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INTRODUCTION
+    ====================================================== -->
+
+    <section class="intro-section section">
+
+        <div class="container intro-grid">
+
+            <div class="intro-label reveal">
+
+                <span class="eyebrow">
+                    WHY ABSOLUTE
+                </span>
+
+                <span class="section-number">
+                    01
+                </span>
+
+            </div>
+
+
+            <div class="intro-content reveal">
+
+                <h2>
+                    Ice cream should be
+                    <em>simple.</em>
+                </h2>
+
+                <p class="large-copy">
+                    Great ingredients. Serious flavour.
+                    And nothing hidden behind clever wording.
+                </p>
+
+                <p>
+                    Absolute Icecream is being built around a simple idea:
+                    if we make a claim about what is inside the tub,
+                    you should be able to understand it — and verify it.
+                </p>
+
+                <a href="#proof"
+                   class="text-link">
+                    Discover the proof system
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SUGAR TRUTH
+    ====================================================== -->
+
+    <section class="sugar-section section">
+
+        <div class="container">
+
+            <div class="section-heading centered reveal">
+
+                <span class="eyebrow">
+                    READ THE LABEL
+                </span>
+
+                <h2>
+                    NO ADDED SUGAR
+                    <span>≠</span>
+                    NO TOTAL SUGAR
+                </h2>
+
+                <p>
+                    The distinction matters.
+                </p>
+
+            </div>
+
+
+            <div class="sugar-explainer reveal">
+
+                <div class="sugar-card sugar-card-muted">
+
+                    <span class="card-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Added sugar
+                    </h3>
+
+                    <p>
+                        Sugar intentionally added during formulation
+                        is only one part of the picture.
+                    </p>
+
+                    <div class="sugar-meter">
+
+                        <div class="meter-track">
+                            <span style="width: 48%;"></span>
+                        </div>
+
+                        <small>
+                            What the claim may describe
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="sugar-divider">
+
+                    <span>VS</span>
+
+                </div>
+
+
+                <div class="sugar-card sugar-card-highlight">
+
+                    <span class="card-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Total sugars
+                    </h3>
+
+                    <p>
+                        A broader measure that includes naturally
+                        occurring sugars such as lactose.
+                    </p>
+
+                    <div class="sugar-meter">
+
+                        <div class="meter-track">
+                            <span style="width: 92%;"></span>
+                        </div>
+
+                        <small>
+                            What we intend to measure
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Target -->
+
+            <div class="sugar-target reveal">
+
+                <div class="target-value">
+
+                    <strong>
+                        ≤0.5
+                    </strong>
+
+                    <span>
+                        g
+                    </span>
+
+                </div>
+
+                <div class="target-copy">
+
+                    <span class="eyebrow">
+                        DESIGN TARGET
+                    </span>
+
+                    <h3>
+                        Total sugars per 100 g
+                    </h3>
+
+                    <p>
+                        Target to be independently verified through
+                        third-party laboratory testing before any
+                        corresponding product claim is made.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROOF SYSTEM
+    ====================================================== -->
+
+    <section class="proof-section section" id="proof">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="eyebrow">
+                    PROOF, NOT PROMISES
+                </span>
+
+                <h2>
+                    Your tub has
+                    <em>receipts.</em>
+                </h2>
+
+                <p>
+                    Each product has a dedicated report page for its available
+                    laboratory results and product information.
+                </p>
+
+            </div>
+
+
+            <div class="proof-flow">
+
+                <div class="proof-step reveal">
+
+                    <div class="proof-icon">
+                        01
+                    </div>
+
+                    <span>
+                        SCAN
+                    </span>
+
+                    <h3>
+                        Scan the QR
+                    </h3>
+
+                    <p>
+                        Find the QR code printed on your tub.
+                    </p>
+
+                </div>
+
+
+                <div class="proof-connector">
+                    →
+                </div>
+
+
+                <div class="proof-step reveal reveal-delay-1">
+
+                    <div class="proof-icon">
+                        02
+                    </div>
+
+                    <span>
+                        IDENTIFY
+                    </span>
+
+                    <h3>
+                        Select a product
+                    </h3>
+
+                    <p>
+                        The product-specific QR code opens that flavour's
+                        report page directly.
+                    </p>
+
+                </div>
+
+
+                <div class="proof-connector">
+                    →
+                </div>
+
+
+                <div class="proof-step reveal reveal-delay-2">
+
+                    <div class="proof-icon">
+                        03
+                    </div>
+
+                    <span>
+                        VERIFY
+                    </span>
+
+                    <h3>
+                        Read the report
+                    </h3>
+
+                    <p>
+                        Review published laboratory results and
+                        product information in one place.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="proof-cta reveal">
+
+                <a href="{{ url_for('shop.shop') }}#product-reports"
+                   class="btn btn-light">
+                    Browse product reports
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FLAVOURS
+    ====================================================== -->
+
+    <section class="flavours-section section"
+             id="flavours">
+
+        <div class="container">
+
+            <div class="section-heading flavour-heading reveal">
+
+                <div>
+
+                    <span class="eyebrow">
+                        THE COLLECTION
+                    </span>
+
+                    <h2>
+                        Three ways
+                        <em>to begin.</em>
+                    </h2>
+
+                </div>
+
+                <a href="/shop"
+                   class="text-link">
+                    View collection →
+                </a>
+
+            </div>
+
+
+            <div class="flavour-grid">
+
+                <!-- Dark Chocolate -->
+
+                <article class="flavour-card flavour-dark reveal">
+
+                    <div class="flavour-image">
+
+                        <img
+                            src="{{ url_for(
+                                'static',
+                                filename='images/products/dark-chocolate.JPG'
+                            ) }}"
+                            alt="Absolute Icecream Dark Chocolate"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="flavour-info">
+
+                        <span>
+                            01 / DARK CHOCOLATE
+                        </span>
+
+                        <h3>
+                            Dark Chocolate
+                        </h3>
+
+                        <p>
+                            Deep cocoa character with a rich,
+                            grown-up finish.
+                        </p>
+
+                        <a href="/shop/dark-chocolate"
+                           class="text-link">
+                            Discover →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Coffee -->
+
+                <article class="flavour-card flavour-cookie reveal">
+
+                    <div class="flavour-image">
+
+                        <img
+                            src="{{ url_for(
+                                'static',
+                                filename='images/products/cookie-n-cream.JPG'
+                            ) }}"
+                            alt="Absolute Icecream Cookie n Cream"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="flavour-info">
+
+                        <span>
+                            02 / COOKIE-N-CREAM
+                        </span>
+
+                        <h3>
+                            Cookie n Cream
+                        </h3>
+
+                        <p>
+                            A classic combination of vanilla ice cream and chocolate chips.
+                        </p>
+
+                        <a href="{{ url_for('shop.product_detail', slug='cookies-and-cream') }}"
+                           class="text-link">
+                            Discover →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Vanilla -->
+
+                <article class="flavour-card flavour-vanilla reveal">
+
+                    <div class="flavour-image">
+
+                        <img
+                            src="{{ url_for(
+                                'static',
+                                filename='images/products/vanilla.JPG'
+                            ) }}"
+                            alt="Absolute Icecream Vanilla"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="flavour-info">
+
+                        <span>
+                            03 / VANILLA
+                        </span>
+
+                        <h3>
+                            Vanilla
+                        </h3>
+
+                        <p>
+                            Clean, creamy and deliberately
+                            uncomplicated.
+                        </p>
+
+                        <a href="{{ url_for('shop.product_detail', slug='classic-vanilla') }}"
+                           class="text-link">
+                            Discover →
+                        </a>
+
+                    </div>
+
+                </article>
+                <article class="flavour-card flavour-mango reveal">
+
+                    <div class="flavour-image">
+
+                        <img
+                            src="{{ url_for(
+                                'static',
+                                filename='images/products/mango.JPG'
+                            ) }}"
+                            alt="Absolute Icecream Mango"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="flavour-info">
+
+                        <span>
+                            03 / ALPHONSO MANGO
+                        </span>
+
+                        <h3>
+                            Alphonso Mango
+                        </h3>
+
+                        <p>
+                            Clean, creamy and deliberately
+                            uncomplicated.
+                        </p>
+
+                        <a href="{{ url_for('shop.product_detail', slug='alphonso-mango') }}"
+                           class="text-link">
+                            Discover →
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <article class="flavour-card flavour-starwberry reveal">
+
+                    <div class="flavour-image">
+
+                        <img
+                            src="{{ url_for(
+                                'static',
+                                filename='images/products/strawberry.JPG'
+                            ) }}"
+                            alt="Absolute Icecream Strawberry"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="flavour-info">
+
+                        <span>
+                            03 / STRAWBERRY
+                        </span>
+
+                        <h3>
+                            Strawberry
+                        </h3>
+
+                        <p>
+                            Clean, creamy and deliberately
+                            uncomplicated.
+                        </p>
+
+                        <a href="/shop/strawberry"
+                           class="text-link">
+                            Discover →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INGREDIENT TRANSPARENCY
+    ====================================================== -->
+
+    <section class="ingredients-section section">
+
+        <div class="container ingredient-grid">
+
+            <div class="ingredient-visual reveal">
+
+                <div class="ingredient-circle">
+
+                    <span>
+                        WHAT'S<br>
+                        INSIDE?
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="ingredient-copy reveal">
+
+                <span class="eyebrow">
+                    INGREDIENT TRANSPARENCY
+                </span>
+
+                <h2>
+                    If it's in the tub,
+                    <em>show it.</em>
+                </h2>
+
+                <p>
+                    We want ingredient information to be easy to
+                    understand — not hidden behind marketing language.
+                </p>
+
+
+                <div class="ingredient-list">
+
+                    <div>
+                        <strong>
+                            Dairy base
+                        </strong>
+
+                        <span>
+                            Low-lactose formulation
+                        </span>
+                    </div>
+
+                    <div>
+                        <strong>
+                            Sweetener system
+                        </strong>
+
+                        <span>
+                            Formulation under development
+                        </span>
+                    </div>
+
+                    <div>
+                        <strong>
+                            Flavour
+                        </strong>
+
+                        <span>
+                            Flavour-specific ingredients
+                        </span>
+                    </div>
+
+                </div>
+
+                <a href="/ingredients"
+                   class="btn btn-outline">
+                    Explore ingredients
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WHY ABSOLUTE
+    ====================================================== -->
+
+    <section class="why-section section">
+
+        <div class="container">
+
+            <div class="section-heading centered reveal">
+
+                <span class="eyebrow">
+                    THE ABSOLUTE STANDARD
+                </span>
+
+                <h2>
+                    Built differently.
+                </h2>
+
+            </div>
+
+
+            <div class="why-grid">
+
+                <article class="why-card reveal">
+
+                    <span class="why-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Taste first
+                    </h3>
+
+                    <p>
+                        The product still has to be ice cream
+                        worth eating.
+                    </p>
+
+                </article>
+
+
+                <article class="why-card reveal">
+
+                    <span class="why-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Clear labels
+                    </h3>
+
+                    <p>
+                        Explain the difference between marketing
+                        language and measurable nutrition.
+                    </p>
+
+                </article>
+
+
+                <article class="why-card reveal">
+
+                    <span class="why-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Product lab reports
+                    </h3>
+
+                    <p>
+                        Open the report page for each flavour
+                        directly from its product QR code.
+                    </p>
+
+                </article>
+
+
+                <article class="why-card reveal">
+
+                    <span class="why-number">
+                        04
+                    </span>
+
+                    <h3>
+                        Continuous testing
+                    </h3>
+
+                    <p>
+                        Product claims should follow testing,
+                        not the other way around.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SOCIAL PROOF
+    ====================================================== -->
+
+    <section class="social-section section">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="eyebrow">
+                    FROM THE COMMUNITY
+                </span>
+
+                <h2>
+                    First the taste.
+                    <em>Then the proof.</em>
+                </h2>
+
+            </div>
+
+
+            <div class="testimonial-grid">
+
+                <blockquote class="testimonial reveal">
+
+                    <p>
+                        “This is where customer reviews
+                        will appear after launch.”
+                    </p>
+
+                    <cite>
+                        — Early customer
+                    </cite>
+
+                </blockquote>
+
+
+                <blockquote class="testimonial reveal">
+
+                    <p>
+                        “This section is ready for verified
+                        post-purchase feedback.”
+                    </p>
+
+                    <cite>
+                        — Absolute community
+                    </cite>
+
+                </blockquote>
+
+
+                <blockquote class="testimonial reveal">
+
+                    <p>
+                        “Scan. Taste. Learn. Repeat.”
+                    </p>
+
+                    <cite>
+                        — Brand principle
+                    </cite>
+
+                </blockquote>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SUBSCRIPTION
+    ====================================================== -->
+
+    <section class="subscription-section section hero-second-section">
+
+        <div class="container subscription-card reveal">
+
+            <div>
+
+                <span class="eyebrow">
+                    ABSOLUTE ON REPEAT
+                </span>
+
+                <h2>
+                    Your freezer called.
+                </h2>
+
+                <p>
+                    Monthly flavour bundles, delivered on your schedule.
+                </p>
+
+            </div>
+
+            <a href="/subscribe"
+               class="btn btn-light">
+                Build a subscription
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         REWARDS
+    ====================================================== -->
+
+    <section class="rewards-section section">
+
+        <div class="container rewards-grid">
+
+            <div class="rewards-copy reveal">
+
+                <span class="eyebrow">
+                    ABSOLUTE REWARDS
+                </span>
+
+                <h2>
+                    Scan.
+                    <em>Earn.</em>
+                    Repeat.
+                </h2>
+
+                <p>
+                    Product QR codes can eventually do more than
+                    open reports — they can connect you to your
+                    customer rewards journey.
+                </p>
+
+                <a href="/rewards"
+                   class="text-link">
+                    Explore rewards →
+                </a>
+
+            </div>
+
+
+            <div class="rewards-stamp reveal reveal-delay-1">
+
+                <span>
+                    ABSOLUTE
+                </span>
+
+                <strong>
+                    +100
+                </strong>
+
+                <small>
+                    POINTS
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FINAL CTA
+    ====================================================== -->
+
+    <section class="final-cta">
+
+        <div class="final-cta-noise"></div>
+
+        <div class="container">
+
+            <span class="eyebrow">
+                ABSOLUTE ICECREAM™
+            </span>
+
+            <h2>
+                Real taste.
+                <br>
+                No compromises.
+            </h2>
+
+            <p>
+                Discover the collection.
+            </p>
+
+            <a href="/shop"
+               class="btn btn-light">
+                Shop Absolute
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+{% endblock %}

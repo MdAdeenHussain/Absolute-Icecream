@@ -1,0 +1,189 @@
+{% extends "admin/layout.html" %}
+
+{% block title %}
+Admin Dashboard | Absolute Icecream™
+{% endblock %}
+
+{% block admin_content %}
+
+<div class="admin-page-header">
+
+    <div>
+
+        <span class="eyebrow">
+            OVERVIEW
+        </span>
+
+        <h1>
+            Dashboard
+        </h1>
+
+    </div>
+
+</div>
+
+
+<div class="admin-stat-grid">
+
+    <div class="admin-stat">
+
+        <span>
+            REVENUE
+        </span>
+
+        <strong>
+            ₹{{ "%.2f"|format(total_revenue or 0) }}
+        </strong>
+
+    </div>
+
+
+    <div class="admin-stat">
+
+        <span>
+            ORDERS
+        </span>
+
+        <strong>
+            {{ orders_count }}
+        </strong>
+
+    </div>
+
+
+    <div class="admin-stat">
+
+        <span>
+            CUSTOMERS
+        </span>
+
+        <strong>
+            {{ customers_count }}
+        </strong>
+
+    </div>
+
+
+    <div class="admin-stat">
+
+        <span>
+            PRODUCTS
+        </span>
+
+        <strong>
+            {{ products_count }}
+        </strong>
+
+    </div>
+
+</div>
+
+
+<section class="admin-panel">
+
+    <div class="admin-panel-header">
+
+        <div>
+
+            <span class="eyebrow">
+                OPERATIONS
+            </span>
+
+            <h2>
+                Orders requiring attention
+            </h2>
+
+        </div>
+
+        <strong>
+            {{ pending_orders }}
+        </strong>
+
+    </div>
+
+</section>
+
+
+<section class="admin-panel">
+
+    <div class="admin-panel-header">
+
+        <h2>
+            Recent Orders
+        </h2>
+
+        <a
+            href="{{ url_for('admin.orders') }}"
+            class="admin-link"
+        >
+            View All
+        </a>
+
+    </div>
+
+
+    {% if recent_orders %}
+
+    <div class="admin-table-wrap">
+
+        <table class="admin-table">
+
+            <thead>
+
+                <tr>
+                    <th>Order</th>
+                    <th>Customer</th>
+                    <th>Status</th>
+                    <th>Payment</th>
+                    <th>Total</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for order in recent_orders %}
+
+                <tr>
+
+                    <td>
+                        {{ order.order_number }}
+                    </td>
+
+                    <td>
+                        {{ order.customer_email }}
+                    </td>
+
+                    <td>
+                        {{ order.status|title }}
+                    </td>
+
+                    <td>
+                        {{ order.payment_status|title }}
+                    </td>
+
+                    <td>
+                        ₹{{ "%.2f"|format(order.total) }}
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    {% else %}
+
+    <div class="admin-empty">
+        No orders yet.
+    </div>
+
+    {% endif %}
+
+</section>
+
+{% endblock %}
