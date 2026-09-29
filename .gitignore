@@ -216,3 +216,27 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local-only environment files. Keep the safe placeholder template in Git.
+.env.*
+!.env.example
+*.env
+!.env.example
+.secrets/
+secrets/
+
+# Local databases, backups, and exports
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.dump
+*.sql.gz
+
+# Private keys and common cloud/service credential files
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+service-account*.json
