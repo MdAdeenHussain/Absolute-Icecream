@@ -216,25 +216,3 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
-
-# Local environment files and secrets. Keep the placeholder template tracked.
-.env.*
-!.env.example
-*.env
-!.env.example
-.secrets/
-secrets/
-
-# Local databases and backups
-*.db
-*.sqlite
-*.sqlite3
-*.db-journal
-
-# Private keys and cloud/service credentials
-*.pem
-*.key
-*.p12
-*.pfx
-credentials*.json
-service-account*.json
