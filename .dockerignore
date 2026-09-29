@@ -1,0 +1,34 @@
+# Never include local secrets or developer state in an image build context.
+.env
+.env.*
+!.env.example
+.envrc
+.secrets/
+secrets/
+
+# Python environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage*
+htmlcov/
+
+# Version-control and editor metadata
+.git/
+.gitignore
+.github/
+.vscode/
+.idea/
+.DS_Store
+
+# Local databases, logs, and caches
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.pid
+instance/

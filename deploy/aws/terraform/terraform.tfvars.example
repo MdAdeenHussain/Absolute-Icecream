@@ -1,0 +1,10 @@
+# Copy to terraform.tfvars (ignored by Git) and set the validated ACM cert ARN.
+aws_region     = "ap-south-1"
+certificate_arn = "arn:aws:acm:ap-south-1:123456789012:certificate/replace-with-your-certificate-id"
+
+# Start with no service tasks until an image is pushed and migrations are run.
+desired_count = 0
+
+# The first deployment can keep this tag; for subsequent deployments use a
+# unique immutable commit-based tag, e.g. sha-a1b2c3d.
+app_image_tag = "sha-initial"

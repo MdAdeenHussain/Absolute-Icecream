@@ -240,3 +240,14 @@ secrets/
 *.pfx
 credentials*.json
 service-account*.json
+
+# Terraform state, plans, provider caches, and private deployment variables.
+# State contains generated database credentials and Secrets Manager values.
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+terraform.tfvars
+terraform.tfvars.json

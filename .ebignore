@@ -1,0 +1,65 @@
+# Elastic Beanstalk uses this file for source bundles instead of .gitignore.
+# Keep the security exclusions here even when they also exist in .gitignore.
+
+# Local environment secrets; retain only the placeholder template.
+.env
+.env.*
+!.env.example
+*.env
+!.env.example
+.envrc
+.secrets/
+secrets/
+
+# Credentials and private keys
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+service-account*.json
+
+# Local databases, backups, and runtime state
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.dump
+*.sql.gz
+instance/
+*.log
+*.pid
+
+# Python environments, bytecode, tests, and caches
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+
+# Local editor and source-control metadata
+.git/
+.github/
+.vscode/
+.idea/
+.DS_Store
+
+# Terraform state/configuration and deployment-only infrastructure files
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+terraform.tfvars
+terraform.tfvars.json
+crash.log
+crash.*.log
+deploy/aws/terraform/
